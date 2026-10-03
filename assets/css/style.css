@@ -1,0 +1,614 @@
+/* DynoShade — gaya laman */
+
+:root {
+  --ink:#172119;
+  --muted:#536058;
+  --lime:#acd346;
+  --cream:#f6f7f0;
+  --line:#dce2d7;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  color:var(--ink);
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  background:#fff;
+}
+
+h1,h2,h3,p {
+  margin-top:0;
+}
+
+h1,h2,h3 {
+  font-family:Manrope,Arial,sans-serif;
+  line-height:1.12;
+  letter-spacing:-.045em;
+}
+
+h1 {
+  font-size:clamp(3.2rem,7vw,7rem);
+  font-weight:800;
+  margin-bottom:1.35rem;
+}
+
+h2 {
+  font-size:clamp(2.4rem,5vw,4.3rem);
+  margin-bottom:1.25rem;
+}
+
+h3 {
+  font-size:1.5rem;
+  letter-spacing:-.035em;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+button {
+  font:inherit;
+}
+
+img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.wrap {
+  width:min(1190px,calc(100% - 40px));
+  margin:auto;
+}
+
+.eyebrow {
+  text-transform:uppercase;
+  letter-spacing:.19em;
+  font-size:.8rem;
+  font-weight:800;
+  color:#5c8f1e;
+}
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.65rem;
+  padding:.93rem 1.38rem;
+  border-radius:999px;
+  font-weight:700;
+  background:var(--lime);
+  border:1px solid var(--lime);
+  color:var(--ink);
+  transition:transform .2s,background .2s;
+}
+
+.btn:hover {
+  transform:translateY(-2px);
+  background:#b9df59;
+}
+
+.btn.dark {
+  background:var(--ink);
+  color:white;
+  border-color:var(--ink);
+}
+
+.btn.outline {
+  background:transparent;
+  border-color:#7d8b79;
+}
+
+.top {
+  height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+
+.logo {
+  font:800 1.48rem Manrope;
+  letter-spacing:-.06em;
+}
+
+.logo span {
+  color:#80af2b;
+}
+
+.nav {
+  display:flex;
+  gap:2rem;
+  align-items:center;
+  font-weight:700;
+  font-size:.92rem;
+}
+
+.nav a:hover {
+  color:#65991c;
+}
+
+.nav-cta {
+  font-size:.9rem;
+}
+
+.hero {
+  background:var(--ink);
+  color:#fff;
+  overflow:hidden;
+}
+
+.hero-inner {
+  min-height:680px;
+  display:grid;
+  grid-template-columns:1fr 1.02fr;
+  align-items:stretch;
+}
+
+.hero-copy {
+  padding:88px 48px 85px 0;
+  align-self:center;
+}
+
+.hero .eyebrow {
+  color:var(--lime);
+}
+
+.hero h1 em {
+  color:var(--lime);
+  font-style:normal;
+}
+
+.hero p {
+  font-size:1.16rem;
+  color:#d7ded5;
+  max-width:540px;
+}
+
+.hero-actions {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:32px;
+}
+
+.hero-meta {
+  margin-top:42px;
+  display:flex;
+  gap:30px;
+  color:#d0d9cc;
+  font-size:.9rem;
+}
+
+.hero-meta strong {
+  display:block;
+  color:#fff;
+  font:800 1.5rem Manrope;
+}
+
+.hero-image {
+  position:relative;
+  min-height:520px;
+  margin-right:calc((min(1190px,100vw - 40px) - 100vw)/2);
+}
+
+.hero-image img {
+  object-position:center;
+}
+
+.hero-image:after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(23,33,25,.2),transparent 35%);
+}
+
+.image-caption {
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  background:#172119d9;
+  color:#fff;
+  border-radius:99px;
+  padding:8px 13px;
+  font-size:.78rem;
+  z-index:1;
+}
+
+.section {
+  padding:105px 0;
+}
+
+.section-intro {
+  max-width:720px;
+  color:var(--muted);
+  font-size:1.08rem;
+}
+
+.split-title {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:40px;
+  margin-bottom:30px;
+}
+
+.split-title p {
+  max-width:430px;
+  color:var(--muted);
+}
+
+.why {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.why article {
+  background:var(--cream);
+  padding:35px;
+  border-radius:20px;
+}
+
+.why .num {
+  font:800 2.1rem Manrope;
+  color:#84af35;
+  display:block;
+  margin-bottom:35px;
+}
+
+.why p {
+  color:var(--muted);
+  margin-bottom:0;
+}
+
+.pricing {
+  background:#edf1e6;
+}
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:45px;
+}
+
+.card {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:32px;
+  display:flex;
+  flex-direction:column;
+}
+
+.card.featured {
+  background:var(--ink);
+  color:#fff;
+  border-color:var(--ink);
+}
+
+.card .tag {
+  align-self:flex-start;
+  border-radius:50px;
+  padding:5px 11px;
+  background:#e6f3c9;
+  color:#42651a;
+  font-weight:800;
+  font-size:.76rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.card h3 {
+  margin:23px 0 5px;
+}
+
+.price {
+  font:800 clamp(2rem,3vw,2.7rem) Manrope;
+  letter-spacing:-.05em;
+  margin:10px 0;
+}
+
+.price small {
+  font:500 .9rem 'DM Sans';
+  letter-spacing:0;
+}
+
+.card .desc {
+  color:var(--muted);
+  min-height:54px;
+}
+
+.featured .desc,.featured li,.featured .fine {
+  color:#d2ddd0;
+}
+
+.card ul {
+  padding:0;
+  list-style:none;
+  flex:1;
+  margin:14px 0 30px;
+}
+
+.card li {
+  padding:10px 0;
+  border-top:1px solid var(--line);
+}
+
+.featured li {
+  border-color:#3e4b3f;
+}
+
+.card li:before {
+  content:'✓';
+  color:#79a92c;
+  font-weight:800;
+  margin-right:10px;
+}
+
+.featured li:before {
+  color:var(--lime);
+}
+
+.fine {
+  font-size:.85rem;
+  color:var(--muted);
+  margin-top:20px;
+}
+
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.gallery figure {
+  height:360px;
+}
+
+.gallery figure {
+  position:relative;
+  margin:0;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.gallery img {
+  transition:transform .35s;
+}
+
+.gallery figure:hover img {
+  transform:scale(1.035);
+}
+
+.gallery figcaption {
+  position:absolute;
+  bottom:18px;
+  left:18px;
+  background:#172119e5;
+  color:#fff;
+  padding:7px 13px;
+  border-radius:20px;
+  font-size:.82rem;
+}
+
+.process {
+  background:var(--ink);
+  color:#fff;
+}
+
+.process .eyebrow {
+  color:var(--lime);
+}
+
+.steps {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+  margin-top:50px;
+}
+
+.step {
+  border-top:1px solid #6d806d;
+  padding-top:20px;
+}
+
+.step b {
+  display:block;
+  color:var(--lime);
+  font:800 1.8rem Manrope;
+  margin-bottom:26px;
+}
+
+.step p {
+  color:#cfdbd0;
+}
+
+.contact {
+  background:var(--lime);
+  padding:85px 0;
+}
+
+.contact-box {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:50px;
+}
+
+.contact h2 {
+  max-width:650px;
+}
+
+.contact p {
+  max-width:550px;
+}
+
+.contact .btn {
+  white-space:nowrap;
+}
+
+.contact-note {
+  font-size:.88rem;
+  margin-top:12px;
+}
+
+footer {
+  padding:35px 0;
+  background:var(--ink);
+  color:#d3dfd0;
+}
+
+footer .wrap {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+}
+
+footer .logo {
+  color:#fff;
+}
+
+footer small {
+  font-size:.85rem;
+}
+
+.hide {
+  display:none;
+}
+
+@media(max-width:850px) {
+  .nav {
+    gap:1rem;
+  }
+  .nav-cta {
+    display:none;
+  }
+  .hero-inner {
+    grid-template-columns:1fr;
+  }
+  .hero-copy {
+    padding:65px 0;
+  }
+  .hero-image {
+    margin:0 -20px;
+    min-height:370px;
+    max-height:520px;
+  }
+  .why,.cards {
+    grid-template-columns:1fr 1fr;
+  }
+  .cards .card:last-child {
+    grid-column:span 2;
+  }
+  .steps {
+    grid-template-columns:1fr 1fr;
+  }
+  .contact-box {
+    align-items:start;
+    flex-direction:column;
+  }
+  .gallery {
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:580px) {
+  .top {
+    height:68px;
+  }
+  .nav {
+    font-size:.81rem;
+    gap:.8rem;
+  }
+  .nav a:nth-child(2) {
+    display:none;
+  }
+  .logo {
+    font-size:1.28rem;
+  }
+  .hero-copy {
+    padding:55px 0;
+  }
+  .hero h1 {
+    font-size:clamp(3.1rem,13vw,5rem);
+  }
+  .hero-meta {
+    gap:22px;
+    margin-top:35px;
+  }
+  .section {
+    padding:72px 0;
+  }
+  .split-title {
+    display:block;
+  }
+  .why,.cards,.steps {
+    grid-template-columns:1fr;
+  }
+  .cards .card:last-child {
+    grid-column:auto;
+  }
+  .gallery {
+    grid-template-columns:1fr;
+    min-height:0;
+  }
+  .gallery figure {
+    height:300px;
+  }
+  .contact {
+    padding:70px 0;
+  }
+  footer .wrap {
+    align-items:start;
+    flex-direction:column;
+  }
+  .hero-image {
+    min-height:320px;
+  }
+  .hero-actions .btn {
+    width:100%;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior:auto;
+  }
+  *,*:before,*:after {
+    transition:none!important;
+  }
+}
+
+/* Tambahan: gaya yang sebelum ini inline + fokus papan kekunci */
+.hero .btn.outline {
+  color:#fff;
+  border-color:#8c9b87;
+}
+
+.contact .eyebrow {
+  color:#304b17;
+}
+
+a:focus-visible,
+.btn:focus-visible {
+  outline:3px solid #5c8f1e;
+  outline-offset:3px;
+}
+
+.hero a:focus-visible {
+  outline-color:var(--lime);
+}
