@@ -132,7 +132,7 @@
               <li>Essential + 3 tiang · RM3,300</li>
               <li>Struktur kuat, dicat ikut warna tema</li>
             </ul>
-            <a class="btn" href="#hubungi">Tanya berapa tiang diperlukan</a>
+            <a class="btn" href="#simulasi">Kira harga dengan tiang</a>
           </article>
           <article class="card">
             <span class="tag">Ruang berskala besar</span>
@@ -149,24 +149,47 @@
           </article>
         </div>
 
-        <div class="guide" id="tiang">
-          <h3>Berapa tiang yang saya perlukan?</h3>
-          <p>Setiap bucu sail perlu diikat pada dinding, tiang sedia ada atau tiang baharu. Panduan biasa:</p>
-          <div class="guide-grid">
-            <div>
-              <b>0 tiang</b>
-              <p>Sudut rumah di mana dua dinding bertemu, atau anjung dengan tiang sedia ada.</p>
-              <strong>RM1,800</strong>
-            </div>
-            <div>
-              <b>2 tiang</b>
-              <p>Laman di hadapan satu dinding. Bucu sebelah luar diikat pada tiang.</p>
-              <strong>RM2,800</strong>
-            </div>
-            <div>
-              <b>3 tiang</b>
-              <p>Kawasan lapang tanpa dinding, seperti tepi kolam atau ruang makan kafe.</p>
-              <strong>RM3,300</strong>
+        <div class="sim" id="simulasi" data-base="1800" data-pole="500">
+          <div class="sim-head">
+            <span class="eyebrow">Simulasi harga</span>
+            <h3>Berapa tiang yang saya perlukan?</h3>
+            <p>Setiap bucu sail perlu diikat pada dinding, tiang sedia ada atau tiang baharu. Pilih keadaan yang paling hampir dengan ruang anda.</p>
+          </div>
+          <div class="sim-body">
+            <fieldset class="sim-options">
+              <legend class="sr-only">Bilangan tiang</legend>
+              <label class="sim-opt">
+                <input type="radio" name="tiang" value="0">
+                <b>0 tiang</b>
+                <span>Sudut rumah di mana dua dinding bertemu, atau anjung dengan tiang sedia ada.</span>
+              </label>
+              <label class="sim-opt">
+                <input type="radio" name="tiang" value="1">
+                <b>1 tiang</b>
+                <span>Ruang dekat dinding, hanya satu bucu sail berada di kawasan terbuka.</span>
+              </label>
+              <label class="sim-opt">
+                <input type="radio" name="tiang" value="2" checked>
+                <b>2 tiang</b>
+                <span>Laman di hadapan satu dinding. Bucu sebelah luar diikat pada tiang.</span>
+              </label>
+              <label class="sim-opt">
+                <input type="radio" name="tiang" value="3">
+                <b>3 tiang</b>
+                <span>Kawasan lapang tanpa dinding, seperti tepi kolam atau ruang makan kafe.</span>
+              </label>
+              <label class="sim-opt">
+                <input type="radio" name="tiang" value="4">
+                <b>4 tiang</b>
+                <span>Ruang lebih luas atau susunan sail yang lebih panjang.</span>
+              </label>
+            </fieldset>
+            <div class="sim-receipt" aria-live="polite">
+              <div class="sim-row"><span>Essential 2 layer</span><span>RM1,800</span></div>
+              <div class="sim-row"><span data-sim-label>Tiang: 2 × RM500</span><span data-sim-poles>RM1,000</span></div>
+              <div class="sim-total"><span>Jumlah anggaran</span><strong data-sim-total>RM2,800</strong></div>
+              <p class="sim-note">Siap pasang. Bilangan tiang disahkan semasa lawatan tapak percuma.</p>
+              <a class="btn" data-whatsapp data-sim-cta href="https://wa.me/60182889932" target="_blank" rel="noopener noreferrer">Tempah melalui WhatsApp ↗</a>
             </div>
           </div>
         </div>
