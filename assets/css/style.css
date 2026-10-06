@@ -493,6 +493,20 @@ img {
   width:100%;
 }
 
+.sim-more {
+  margin:22px 0 0;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+}
+
+.sim-more a {
+  color:var(--ink);
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
 .sr-only {
   position:absolute;
   width:1px;
