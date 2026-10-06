@@ -27,11 +27,15 @@ python3 -m http.server 8000
 - **Harga pakej**: seksyen `#pakej` dalam `index.html`.
 - **Gambar galeri**: letak fail baharu dalam `assets/img/` dan kemas kini `src`/`alt` dalam seksyen `#inspirasi`.
 
-## Deploy
+## Deploy (GitHub Pages)
 
-Tiada langkah build — muat naik semua fail ke mana-mana hos statik
-(Netlify, Cloudflare Pages, GitHub Pages, atau cPanel `public_html`).
+Laman ini di-host di **https://dynopos.github.io/Dynoshade/**.
 
-Selepas domain sebenar diketahui, tukar `og:image` dan `image` dalam JSON-LD di
-`index.html` kepada URL penuh (cth. `https://dynoshade.my/assets/img/og-image.jpg`)
-supaya pratonton WhatsApp/Facebook memaparkan gambar.
+Aktifkan sekali sahaja: repo → **Settings → Pages → Build and deployment** →
+Source: *Deploy from a branch* → pilih branch `ccr-540b342c-llzcjo` dan folder `/ (root)` → **Save**.
+Setiap push ke branch itu akan dikemas kini secara automatik dalam 1–2 minit.
+
+Tiada langkah build. Fail `.nojekyll` memastikan GitHub menghidang fail apa adanya.
+
+Jika guna domain sendiri kemudian, tukar URL `dynopos.github.io/Dynoshade` dalam
+`index.html` (canonical, `og:url`, `og:image`, JSON-LD) kepada domain baharu.
