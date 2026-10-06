@@ -19,16 +19,28 @@ if (sim) {
   const update = () => {
     const picked = sim.querySelector('input[name="tiang"]:checked');
     const n = picked ? Number(picked.value) : 0;
-    const total = base + n * pole;
+    const zone = sim.querySelector('input[name="jarak"]:checked');
+    const custom = !zone || zone.value === 'custom';
+    const trans = custom ? 0 : Number(zone.value);
+    const zoneName = zone ? zone.dataset.zone : '';
+    const total = base + n * pole + trans;
     sim.querySelector('[data-sim-label]').textContent = n ? 'Tiang: ' + n + ' × ' + rm(pole) : 'Tanpa tiang';
     sim.querySelector('[data-sim-poles]').textContent = n ? rm(n * pole) : 'RM0';
-    sim.querySelector('[data-sim-total]').textContent = rm(total);
+    sim.querySelector('[data-sim-trans-label]').textContent = 'Pengangkutan (' + zoneName + ')';
+    sim.querySelector('[data-sim-trans]').textContent = custom ? 'Sebut harga' : (trans ? rm(trans) : 'Percuma');
+    sim.querySelector('[data-sim-total]').textContent = custom ? rm(total) + '+' : rm(total);
+    sim.querySelector('[data-sim-note]').textContent = custom
+      ? 'Belum termasuk pengangkutan. Hubungi kami untuk caj tapak lebih 100 km.'
+      : trans
+        ? 'Siap pasang. Tinjauan tapak melalui gambar atau video call WhatsApp.'
+        : 'Siap pasang. Bilangan tiang dan jarak disahkan semasa lawatan tapak percuma.';
     sim.querySelectorAll('.sim-opt').forEach((opt) => {
       opt.classList.toggle('is-on', opt.querySelector('input').checked);
     });
     if (cta && /^60\d{8,11}$/.test(SITE_CONTACT.whatsapp)) {
       const pakej = n ? 'Essential 2 layer + ' + n + ' tiang' : 'Essential 2 layer tanpa tiang';
-      const msg = 'Salam DynoShade. Saya berminat ' + pakej + ' (anggaran ' + rm(total) + '). Lokasi: ';
+      const harga = custom ? 'anggaran ' + rm(total) + ' + pengangkutan' : 'anggaran ' + rm(total);
+      const msg = 'Salam DynoShade. Saya berminat ' + pakej + ', tapak ' + zoneName + ' (' + harga + '). Lokasi: ';
       cta.href = 'https://wa.me/' + SITE_CONTACT.whatsapp + '?text=' + encodeURIComponent(msg);
     }
   };

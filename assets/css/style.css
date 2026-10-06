@@ -451,6 +451,40 @@ img {
   outline-offset:2px;
 }
 
+.sim-left {
+  display:grid;
+  gap:22px;
+}
+
+.sim-legend {
+  font:700 .95rem Manrope,Arial,sans-serif;
+  margin-bottom:10px;
+  padding:0;
+}
+
+.sim-dist {
+  grid-template-columns:1fr 1fr;
+}
+
+.sim-dist .sim-legend {
+  grid-column:1 / -1;
+}
+
+.sim-dist .sim-opt {
+  grid-template-columns:1fr;
+  gap:2px;
+}
+
+.sim-dist .sim-opt b {
+  font-size:1.05rem;
+}
+
+.card .desc .tel {
+  color:var(--ink);
+  font-weight:700;
+  white-space:nowrap;
+}
+
 .sim-receipt {
   background:var(--ink);
   color:#fff;
@@ -491,6 +525,7 @@ img {
 
 .sim-receipt .btn {
   width:100%;
+  text-align:center;
 }
 
 .sim-more {
