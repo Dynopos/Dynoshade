@@ -479,6 +479,13 @@ img {
   font-size:1.05rem;
 }
 
+.sim-dist .sim-opt small {
+  color:var(--muted);
+  font-size:.78rem;
+  line-height:1.35;
+  margin-top:4px;
+}
+
 .card .desc .tel {
   color:var(--ink);
   font-weight:700;

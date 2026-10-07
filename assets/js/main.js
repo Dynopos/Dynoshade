@@ -26,7 +26,7 @@ if (sim) {
     const total = base + n * pole + trans;
     sim.querySelector('[data-sim-label]').textContent = n ? 'Tiang: ' + n + ' × ' + rm(pole) : 'Tanpa tiang';
     sim.querySelector('[data-sim-poles]').textContent = n ? rm(n * pole) : 'RM0';
-    sim.querySelector('[data-sim-trans-label]').textContent = 'Pengangkutan (' + zoneName + ')';
+    sim.querySelector('[data-sim-trans-label]').textContent = 'Pengangkutan (' + zoneName.replace(' dari Kota Bharu', '') + ')';
     sim.querySelector('[data-sim-trans]').textContent = custom ? 'Sebut harga' : (trans ? rm(trans) : 'Percuma');
     sim.querySelector('[data-sim-total]').textContent = custom ? rm(total) + '+' : rm(total);
     sim.querySelector('[data-sim-note]').textContent = custom
